@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+
+    Case Project 
+
+    Author: Carla Cleghorn
+    Date: 2-8-21
+
+    Filename: contact.html
+
+  -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>The Plant Shoppe</title>
+   <link rel="stylesheet" href="styles.css" />
+   <link rel="stylesheet" href="https://use.typekit.net/tbf4rqo.css">
+   <script src="modernizr.custom.05819.js"></script>
+</head>
+
+<body>
+   <header>
+      <h1>
+          <a class="logo" title="The Plant Shoppe" href="index.html"> <img src="logo.jpg" alt="logo"> </a>
+      </h1>
+   </header>
+
+   <nav>
+      <ul>
+        <li>
+          <a title="Home" id= "home" href="index.html">HOME</a>
+        </li>
+
+        <li>
+         <a title="Shop" id= "shop"  href="shop.html">SHOP</a>
+        </li>
+
+         <li>
+         <a title="Care" id= "care"  href="care.html">CARE + TIPS</a>
+        </li>
+
+        <li>
+          <a title="About Us" id="about"  href="about.html">ABOUT</a>
+        </li>
+
+        <li>
+          <a title="Contact" id= "contact" class="active" href="contact.html">CONTACT</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="contact">
+        <h1> We're happy to help!</h1>
+        <p>If you have a question about our shop, plant care, a specific plant, or anything else feel free to call us or send us a message here and we'll get back to you as soon as possible! </p>
+        <form>
+          <label for="name"> Name: </label> 
+          
+          <input type="text" id="name" name="name" ><br>
+          <label for="email"> Email: </label>
+          <input type="email" id="email" name="email"><br>
+          <label for="message">Message:</label>
+          <textarea name="message" id="message"></textarea>
+          <!--insert onclick event to implement checkInput function upon user clicking send-->
+          <input id= "submit" value="send" onclick="checkInput()">
+        </form>
+        <p id="disErr"></p>
+      </section>
+
+    </main>
+
+    <footer>
+      carlajcleghorn@gmail.com &copy; The Plant Shoppe. This site is for educational purposes only. 
+    </footer>
+
+  <script>
+    function checkName() {
+      var message, x; 
+      message = document.getElementById("disErr");
+      message.innerHTML = ""; 
+      x = document.getElementById("name").value;
+      try {
+      //check that x is not an empty value and a numerical value is not entered and if it returns true throw error message 
+        if (x == "") throw "please enter your name.";
+        if (x = Number(x))  throw "please enter your name.";
+      }
+      catch(err) {
+        message.innerHTML = err;
+      }
+    }
+
+    //write function check message to check that the input in the textarea 
+    //feild is not empty. if it returns true throw error message. 
+    function checkMessage(){
+      var message, x; 
+      message = document.getElementById("disErr");
+      message.innerHTML = "";
+      x = document.getElementById("message").value;
+      try{
+        if (x == "") throw "please enter a message.";
+      }
+      catch(err) {
+        message.innerHTML = err; 
+      }
+    }
+
+    //write check email function to ensure email input feild is not empty
+    //return error message if true
+
+     function checkEmail(){
+      var message, x; 
+      message = document.getElementById("disErr");
+      message.innerHTML = "";
+      x = document.getElementById("email").value;
+      try{
+        if (x == "") throw "please enter your email.";
+      }
+      catch(err) {
+        message.innerHTML = err; 
+      }
+    }
+
+    //create checkInput function to run the three input functions together upon click 
+
+    function checkInput() {
+      checkName();
+      checkEmail();
+      checkMessage();
+    }
+
+    /*For this project I used the javascript console to debug by finding highlighted syntax errors and other bugs. I also attempted to use the breakpoints to walkthrough the steps and figure out why some of my functions weren't being enabled in the order I intended, but had trouble drawing any conclusions from it.*/
+  </script>
+</body>
+</html>

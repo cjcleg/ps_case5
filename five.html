@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+
+    Chapter 5 Case Project 
+
+    Author: Carla Cleghorn
+    Date: 2-16-21
+
+    Filename: five.html
+
+  -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Web Safety Practices</title>
+   <style>
+    body {
+      text-align: center;
+      font-family: basic-sans, sans-serif;
+      font-size: 10px;
+      list-style-type: none;
+    }
+    ul li{
+      list-style-type: none; 
+      text-decoration: none; 
+    }
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+    }
+   </style>
+ </head>
+
+ <!--body section for displaying results of navigator object-->
+<body>
+    <section>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <article>
+        <h3>Safe internet use: </h3>
+        <ul>
+          <li> <a href="https://support.google.com/websearch/answer/510?co=GENIE.Platform%3DDesktop&hl=en">Filter explicit results using SafeSearch</a> -- When SafeSearch is on, it helps filter out explicit content in Google's search results for all your queries across images, videos, and websites.</li>
+          <li><a href="https://www.getsafeonline.org/protecting-your-computer/safe-internet-use/">Safe Internet Use</a> -- There are a number of risks associated with going online, which result from either visiting malicious websites or inadvertent disclosure of personal information.</li>
+          <li><a href="https://safebrowsing.google.com/">Making the World's information safely accesible</a> -- Google Safe Browsing helps protect over four billion devices every day by showing warnings to users when they attempt to navigate to dangerous sites or download dangerous files.</li>
+        </ul>
+      </article>
+    </section>
+
+    <script>
+      /*use navigator object to retrieve data about the user and display it in the dedicated area*/
+      "use strict";
+      document.getElementsByTagName("p")[0].innerHTML = "Web browser name: " + navigator.appName;
+      document.getElementsByTagName("p")[1].innerHTML = "Web browser version: " + navigator.appVersion; 
+      document.getElementsByTagName("p")[2].innerHTML = "Operating platform: " + navigator.platform;
+      document.getElementsByTagName("p")[3].innerHTML = "User agent: " + navigator.userAgent;
+      document.getElementsByTagName("p")[4].innerHTML = "User's Location: " +  navigator.geolocation;
+      document.getElementsByTagName("p")[5].innerHTML = "User Online? " + navigator.onLine;
+   </script>
+</body>
+</html>

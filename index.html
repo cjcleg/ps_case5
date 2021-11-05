@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+
+    Chapter 1 Case Project 
+
+    Author: Carla Cleghorn
+    Date: 2-16-21
+
+    Filename: index.html
+
+  -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>The Plant Shoppe</title>
+   <link rel="stylesheet" href="styles.css" />
+   <link rel="stylesheet" href="https://use.typekit.net/tbf4rqo.css">
+
+   <script src="modernizr.custom.05819.js"></script>
+</head>
+
+<body>
+   <header>
+      <h1>
+          <a class="logo" title="The Plant Shoppe" href="index.html"> <img src="logo.jpg" alt="logo"> </a>
+      </h1>
+   </header>
+
+   <nav>
+      <ul>
+        <li>
+          <a title="Home" id= "home" class="active" href="index.html">HOME</a>
+        </li>
+
+        <li>
+         <a title="Shop" id= "shop" href="shop.html">SHOP</a>
+        </li>
+
+         <li>
+         <a title="Care" id= "care" href="care.html">CARE + TIPS</a>
+        </li>
+
+        <li>
+          <a title="About Us" id="about" href="about.html">ABOUT</a>
+        </li>
+
+        <li>
+          <a title="Contact" id= "contact" href="contact.html">CONTACT</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!--button to display window with chapter 5 case work-->
+
+    <input type="button" class="five" id="submit" value="Click Here" onclick= "window.open('five.html', 'mywindow', 'width=300', 'height=100')"/>
+
+    <!--section to display case study 4 work--> 
+    <section class="link">
+      <p> Head to the <a href="contact.html">contact</a> page to send us a message! </p>
+    </section>
+    
+    
+
+    <!--<h2>Check out our new and improved plant selection <a href="shop.html"> here!</a></h2>-->
+
+    <main>
+      <div id="container">
+        <img src="plant1.jpg" alt="tropical leaves">
+        <img src="plant2.jpg" alt="houseplants">
+        <img src="plant4.jpg" alt="monstera leaves"> 
+      </div>
+    <!--create an section to display the plant of the day--> 
+    <section class="day">
+      <h3>Plant Of the Day: </h3>
+      <p id="day"></p> <!--place to output information based on results of the conditional statement -->
+    </section>  
+     
+    </main>
+
+    <footer>
+      carlajcleghorn@gmail.com &copy; The Plant Shoppe. This site is for educational purposes only. 
+    </footer>
+
+    <script>
+      /*create function processInput*/ 
+      function processInput(){
+        /*declare variables to dictate size of the window*/
+        var propWidth = 600; 
+        var propHeight = 200; 
+        /*use screen object properties to center window*/
+        var winLeft = ((screen.width - propWidth)/2);
+        var winTop = ((screen.height - propHeight)/2);
+        var winOptions = "width = 600, height= 200"; 
+        winOptions += ",left=" + winLeft; 
+        winOptions += ",top=" + winTop;
+        window.open("five.htm", "window", winOptions);
+      }
+
+      /*create event listener to open five.html and run function to center it*/
+     function createEventListener() {
+      /*create var submitButton and assign it the value of document element w id "submit"*/ 
+      var submitButton = document.getElementById("submit"); 
+      /*if else if loop to run process input function when submit button is clicked */
+      if (submitButton.addEventListener) {
+        submitButton.addEventListener("click", processInput, false); 
+      } else if (submitButton.attachEvent) {
+        submitButton.attachEvent("onclick", processInput);
+      }
+
+      /*if else if loop to run createeventlistener function on load*/ 
+
+      if(window.addEventListener){
+        window.addEventListener("load", createEventListener, false); 
+      } else if (window.attachEvent){
+        attachEvent("onload", createEventListener); 
+      }
+     }
+   </script>
+
+    <script src="plants2.js"></script>
+</body>
+</html>
